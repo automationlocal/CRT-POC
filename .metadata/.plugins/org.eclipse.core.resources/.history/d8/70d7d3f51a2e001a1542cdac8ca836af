@@ -1,0 +1,28 @@
+ package contextpoc;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
+
+public class myTestCase {
+
+	
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+		
+		DesktopOptions option=new DesktopOptions();
+		option.setApplicationPath("C:\\Program Files\\Refinitiv\\Contributions Real-Time\\bin\\ContributionsReal-TimeConfigTool.exe");
+		Thread.sleep(3000);
+		WiniumDriver driver=new WiniumDriver(new URL("http://localhost:9999"), option);
+		Thread.sleep(3000);
+		driver.findElement(By.name("Create new configuration...")).click();
+		driver.findElement(By.name("Add")).click();
+		driver.findElement(By.name("Handler...")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.name("Class:")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.name("UPAI - UPA Input (OMM Implementation)")).click();
+	}
+}

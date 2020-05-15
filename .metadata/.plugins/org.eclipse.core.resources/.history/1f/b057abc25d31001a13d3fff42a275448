@@ -1,0 +1,98 @@
+ package contextpoc;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
+
+public class myTestCase {
+
+	
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+		
+		DesktopOptions option=new DesktopOptions();
+		option.setApplicationPath("C:\\Program Files\\Refinitiv\\Contributions Real-Time\\bin\\ContributionsReal-TimeConfigTool.exe");
+		Thread.sleep(3000);
+		WiniumDriver driver=new WiniumDriver(new URL("http://localhost:9999"), option);
+		Thread.sleep(3000);
+		driver.findElement(By.name("Create new configuration...")).click();
+		driver.findElement(By.name("Add")).click();
+		driver.findElement(By.name("Handler...")).click();
+		driver.findElement(By.name("Drop Down Button")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.name("UPAI - UPA Input (OMM Implementation)")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("1")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("9008")).click();
+		
+		driver.findElement(By.id("9009")).sendKeys("QA_TESTING");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9011")).sendKeys("30");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9033")).sendKeys("14003");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9016")).sendKeys("pbd");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9019")).sendKeys("123");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9030")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("9027")).click();
+		Thread.sleep(1000);
+		
+		
+		driver.findElement(By.name("contributions_data_dictionary")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("Open")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("9035")).click();
+		Thread.sleep(1000);
+		
+		
+		driver.findElement(By.name("enumtype.def")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("Open")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("1")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("Item 4")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("Item 32815")).click();
+		driver.findElement(By.id("Close")).click();
+		
+		
+		driver.findElement(By.name("Record sets")).click();
+		driver.findElement(By.id("Item 3")).click();
+		driver.findElement(By.id("Item 32818")).click();
+		driver.findElement(By.id("1094")).click();
+		driver.findElement(By.id("1")).click();
+		driver.findElement(By.id("1")).click();
+		
+		
+		driver.findElement(By.id("Item 3")).click();
+		driver.findElement(By.id("Item 32839")).click();
+		driver.findElement(By.id("Item 32839")).sendKeys("REC1");
+		driver.findElement(By.id("1256")).click();
+		driver.findElement(By.id("1")).click();
+		
+		
+		driver.findElement(By.name("Fields")).click();
+		driver.findElement(By.id("Item 3")).click();
+		driver.findElement(By.id("Item 32840")).click();
+		driver.findElement(By.id("1049")).sendKeys("ASK");
+		driver.findElement(By.id("1175")).click();
+		driver.findElement(By.id("1049")).sendKeys("BID");
+		driver.findElement(By.id("1175")).click();
+		
+		
+		
+		
+		
+		
+		
+		
+		}
+}

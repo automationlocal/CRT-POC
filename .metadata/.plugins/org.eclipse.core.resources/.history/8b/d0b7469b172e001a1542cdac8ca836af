@@ -1,0 +1,23 @@
+ package contextpoc;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
+
+public class myTestCase {
+
+	
+	public static void main(String[] args) throws MalformedURLException {
+		
+		DesktopOptions option=new DesktopOptions();
+		option.setApplicationPath("C:\\Program Files\\Refinitiv\\Contributions Real-Time\\bin\\ContributionsReal-TimeConfigTool.exe");
+		WiniumDriver driver=new WiniumDriver(new URL("http://localhost:9999"), option);
+		driver.findElement(By.name("Create new configuration...")).click();
+		driver.findElement(By.name("Add")).click();
+		driver.findElement(By.name("Handler...")).click();
+		driver.findElement(By.name("Class:")).click();
+	}
+}

@@ -1,0 +1,180 @@
+ package contextpoc;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.winium.DesktopOptions;
+import org.openqa.selenium.winium.WiniumDriver;
+
+public class myTestCase {
+
+	
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+		
+		DesktopOptions option=new DesktopOptions();
+		
+		// step1(Open Contribution Real-Time Configuration tool )
+		option.setApplicationPath("C:\\Program Files\\Refinitiv\\Contributions Real-Time\\bin\\ContributionsReal-TimeConfigTool.exe");
+		Thread.sleep(3000);
+		WiniumDriver driver=new WiniumDriver(new URL("http://localhost:9999"), option);
+		Thread.sleep(3000);
+		
+		//Step2(Click on Create new Configuration)
+		driver.findElement(By.name("Create new configuration...")).click();
+		
+		//step-3(Click on  Add tab and select handler option)
+		driver.findElement(By.name("Add")).click();
+		driver.findElement(By.name("Handler...")).click();
+		
+		//Step-4(Click on the class drop down )
+		driver.findElement(By.name("Drop Down Button")).click();
+		Thread.sleep(3000);
+		
+		//step-5(Select UPAI handler from the drop down)
+		driver.findElement(By.name("UPAI - UPA Input (OMM Implementation)")).click();
+		Thread.sleep(2000);
+		
+		//step-6(Click on the Add button)
+		driver.findElement(By.id("1")).click();
+		Thread.sleep(2000);
+		
+		//Step-7(Enter or select all the below details for  configuration of the Handler in Handler configuration  page)
+		driver.findElement(By.id("9008")).click();
+		
+		driver.findElement(By.id("9009")).sendKeys("QA_TESTING");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9011")).sendKeys("30");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9033")).sendKeys("14003");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9016")).sendKeys("pbd");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9019")).sendKeys("123");
+		Thread.sleep(1000);
+		driver.findElement(By.id("9030")).click();
+		Thread.sleep(1000);
+		
+		//step-8(For field dictionary , Click on browse button and navigate to the C:\Program Files\Refinitiv\Contributions Real-Time\marketdata\contributions_data_dictionary)
+		driver.findElement(By.id("9027")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("contributions_data_dictionary")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("Open")).click();
+		Thread.sleep(1000);
+		
+		//step-9(For field Enumeration dictionary , Click on browse button and navigate to the C:\Program Files\Refinitiv\Contributions Real-Time\marketdata\enumtype.def)
+		driver.findElement(By.id("9035")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("enumtype.def")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.name("Open")).click();
+		Thread.sleep(1000);
+		
+		
+		//step-10(Click on the ok button)
+		driver.findElement(By.id("1")).click();
+		Thread.sleep(1000);
+		
+		//step10.1(Click on the configuration button)
+		driver.findElement(By.id("Item 4")).click();
+		Thread.sleep(1000);
+		
+		//step-11(Click on the validate configuration option in tool bar)
+		driver.findElement(By.id("Item 32815")).click();
+		driver.findElement(By.id("Close")).click();
+		
+		//step-12(Select recordset in UPAI handler and Click on Add tab)
+		driver.findElement(By.name("Record sets")).click();
+		driver.findElement(By.id("Item 3")).click();
+		
+		
+		//step-13(select record set option)
+		driver.findElement(By.id("Item 32818")).click();
+		
+		//step-14(Select radio button " Static records" and clock on "Add" button in "Contribution Real-Time Configuration - Add Record Set)
+		driver.findElement(By.id("1094")).click();
+		driver.findElement(By.id("1")).click();
+		
+		//step-15(Click on OK button)
+		driver.findElement(By.id("1")).click();
+		
+		//step-16(Click on Record tab or ADD tab in tool bar)
+		driver.findElement(By.name("Records")).click();
+		
+		//step-17(Click on the Add record)
+		driver.findElement(By.id("Item 3")).click();
+		
+		//step-18(Enter record name  for example "REC1" and click on arrow)
+		driver.findElement(By.id("Item 32839")).click();
+		driver.findElement(By.id("1155")).sendKeys("REC1");
+		driver.findElement(By.id("1256")).click();
+		
+		//step-19(Click on Add Record button)
+		driver.findElement(By.id("1")).click();
+		
+		//step-20(Click on Field tab in tool bar)
+		driver.findElement(By.name("Fields")).click();
+		
+		//step-21(Click on standard field option in tool bar)
+		driver.findElement(By.id("Item 3")).click();
+		driver.findElement(By.id("Item 32840")).click();
+		
+		
+		//step-22(Enter field name as ASK and click on the Add field Arrow button)
+		driver.findElement(By.id("1049")).sendKeys("ASK");
+		driver.findElement(By.id("1175")).click();
+		
+		
+		
+		//step-23(Enter field name as BID and click on the Add field Arrow button)
+		driver.findElement(By.id("1049")).sendKeys("BID");
+		driver.findElement(By.id("1175")).click();
+		
+		
+		//step-24(Click on the Add button)
+		driver.findElement(By.id("1")).click();
+		
+		
+		//step-25(Click on the ADD option in tol bar and select handler)
+		driver.findElement(By.name("Record set")).click();
+		driver.findElement(By.id("Item 3")).click();
+		driver.findElement(By.id("Item 32806")).click();
+		
+		
+		//step-26(Click on the handler drop down and select TROPO)
+		driver.findElement(By.id("DropDown")).click();
+		
+		//step-27(Select TROPO handler from the drop down)
+		driver.findElement(By.name("TROPO - Refinitiv OMM Post Output")).click();
+		
+		
+		//step-28(Click on the Add button)
+		driver.findElement(By.id("1")).click();
+		
+		//step-29(Enter the below details in the TROPO configuration window)
+		driver.findElement(By.id("11018")).sendKeys("QA_DESTINATION");
+		driver.findElement(By.id("11019")).sendKeys("127.0.0.1");
+		driver.findElement(By.id("11020")).sendKeys("14004");
+		driver.findElement(By.id("11021")).sendKeys("127.0.0.1");
+		driver.findElement(By.id("11022")).sendKeys("14004");
+		driver.findElement(By.id("11023")).sendKeys("pbd");
+		driver.findElement(By.id("11024")).sendKeys("123");
+		driver.findElement(By.id("11045")).click();
+		String val = driver.findElement(By.id("11031")).getText();
+		//convert val to integer
+		int value = Integer.parseInt(val); //val string value
+		
+		if(value<=100000) {
+			String flightmsg = driver.findElement(By.id("11033")).getText();
+			//covert fightmsg to int
+			int flightmsgVal = Integer.parseInt(flightmsg);
+			if(flightmsgVal <=5000) {
+				driver.findElement(By.id("1")).click();
+			System.out.println("values are valid");
+		} else {
+			  System.out.println("values are invalid.");
+		}
+		
+		}
+	}
